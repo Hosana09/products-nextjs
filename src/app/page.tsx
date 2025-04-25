@@ -7,6 +7,7 @@ export default function Home() {
       <nav>
         <Link href={'/users'}>Usuários</Link>
         <Link href={'/posts'}>Postagens</Link>
+        <Link href={'/products'}>Produtos</Link>
       </nav>
     </div>
   );
