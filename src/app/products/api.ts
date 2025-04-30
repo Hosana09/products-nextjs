@@ -9,8 +9,11 @@ export async function getProducts(): Promise<IProduct[]> {
     return json
 }
 
-export async function getProductById(id:number) {
+export async function getProductById(id:string): Promise<IProduct | null> {
     const response = await fetch(apiUrl+'/'+id)
+    
+    if (response.status != 200) return null
+    
     const json = await response.json()
 
     return json
@@ -28,6 +31,4 @@ export async function postProduct(data:INewProduct) {
     if (response.status == 201) {
         alert('Produto cadastrado com sucesso!')
     }
-
-    console.log(response)
 }
